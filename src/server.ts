@@ -45,7 +45,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       }, 2000);
     }
     catch(error){
-      res.status(415).send("Image url is malformed: Failed to filter.");
+      res.status(415).send("Image url is missing/malformed: Failed to filter.");
     }
   })
 
