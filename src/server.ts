@@ -29,7 +29,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   /**************************************************************************** */
 
-  app.get('/filteredimage', async (req: Request, res: Response) => {
+  app.get('/filteredimage',async (req: Request, res: Response) => {
     const imageUrl: string = req.query.image_url;
     
     if(!imageUrl){
@@ -45,7 +45,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       }, 1000);
     }
     catch(error){
-      res.status(415).send("Image url is missing/malformed: Failed to filter.");
+      res.status(415).send({message:"Image url is missing/malformed: Failed to filter.", error});
     }
   })
 
